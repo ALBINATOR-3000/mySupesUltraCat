@@ -14,10 +14,15 @@ export class Card {
 
     const cardTitle = this.element.querySelector('.card__name');
     const cardImage = this.element.querySelector('.card__image');
-    cardTitle.textContent = this._data.name;
-    cardImage.src = this._data.image;
+    const cardLike = this.element.querySelector('.card__like');
+        
+        if(!this._data.favorite){
+            cardLike.remove()
+        }
 
-    return this.element;
-  }
+        cardTitle.textContent = this._data.name;
+        cardImage.src = this._data.image;
+
+        return this.element;
+    }
 }
-

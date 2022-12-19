@@ -3,3 +3,8 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.page {
+  background: url(https://phonoteka.org/uploads/posts/2021-05/1620276162_5-phonoteka_org-p-fon-rosta-v-tyurme-5.jpg) no-repeat;
+  background-size: cover;
+}

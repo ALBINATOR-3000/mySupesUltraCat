@@ -35,6 +35,7 @@ function serializeForm(elements) {
 
 function createCat(dataCat) {
   const cardInstance = new Card(dataCat, '#card-template');
+  
   const newCardElement = cardInstance.getElement();
   cardsContainer.append(newCardElement);
 }
@@ -132,3 +133,4 @@ btnOpenPopupLogin.addEventListener('click', () => popupLogin.open());
 
 formCatAdd.addEventListener('submit', handleFormAddCat);
 formLogin.addEventListener('submit', handleFormLogin);
+
