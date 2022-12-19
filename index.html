@@ -7,8 +7,8 @@
     <title>Document</title>
     <script
       src="https://kit.fontawesome.com/3e2b3d0dcf.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" defer></script>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body class="page">
@@ -18,6 +18,7 @@
           ><i class="fa-solid fa-shield-cat"></i>Коты вне закона</a
         >
         <button class="btn" id="add"><i class="fa-solid fa-plus"></i></button>
+        <button class="btn" id="login">Войти</button>
       </div>
     </header>
     <main class="main container">
@@ -50,11 +51,23 @@
                   <span class="form__label">Любимчик</span>  
                   <span class="form__fake-checkbox"><i class="fa-regular fa-circle-check"></i></span>
               </label>
-              <input type="url" class="form__input form__input_image" name="img_link" placeholder="Ссылка на фото">
+              <input type="url" class="form__input form__input_image" name="image" placeholder="Ссылка на фото">
               <button type="submit" class="form__btn btn">Добавить котика</button>
           </form>
       </div>
   </div>
+  <div class="popup popup-login">
+    <div class="popup__container" >
+        <button class="popup__close btn"><i class="fa-solid fa-xmark"></i></button>
+        <h2>Авторизация</h2>
+        <form class="form" id="popup-form-login">
+            <input type="email" class="form__input" name="email" required placeholder="email">
+            <input type="password" class="form__input" name="password" placeholder="password">
+            <button type="submit" class="form__btn btn">Войти</button>
+        </form>
+    </div>
+</div>
+
     <template id="card-template">
       <div class="card">
         <img src="https://www.friendforpet.ru/api/sites/default/files/2022-01/064AEBCB-45EC-4CE7-AB13-C65F10F00B7B.jpeg" alt="Изображение" class="card__image">
@@ -62,10 +75,6 @@
         <button class="card__like" aria-label="Поставить лайк"><i class="fa-solid fa-heart fa-2x"></i></button>
     </div>
     </template>
-    <script src="./script/cats.js" defer></script>
-    <script src="./script/api.js" defer></script>
-    <script src="./script/card.js" defer></script>
-    <script src="./script/popup.js" defer></script>
-    <script src="./script/index.js" defer></script>
+    <script src="./script/index.js" defer type="module"></script>
   </body>
 </html>
