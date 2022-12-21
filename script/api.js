@@ -1,5 +1,3 @@
-
-
 import { cats } from './cats.js';
 
 const CONFIG_API = {

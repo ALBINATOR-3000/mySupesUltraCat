@@ -47,8 +47,7 @@ function handleFormAddCat(e) {
   const dataFromForm = serializeForm(elementsFormCat);
 
   api.addNewCat(dataFromForm).then(() => {
-    console.log({ dataFromForm });
-  
+
     createCat(dataFromForm);
     updateLocalStorage(dataFromForm, { type: 'ADD_CAT' });
   });
@@ -74,22 +73,17 @@ if (!isAuth) {
 
 
 function checkLocalStorage() {
-  console.log('checkLocalStorage');
   const localData = JSON.parse(localStorage.getItem('cats'));
-  console.log(localData);
   const getTimeExpires = localStorage.getItem('catsRefresh');
 
   const isActual = new Date() < new Date(getTimeExpires);
 
-  console.log(new Date(getTimeExpires));
 
   if (localData && localData.length && isActual) {
-    console.log('isActual');
     localData.forEach(function (catData) {
       createCat(catData);
     });
   } else {
-    console.log('else');
     api.getAllCats().then((data) => {
       data.forEach(function (catData) {
         createCat(catData);
@@ -133,4 +127,9 @@ btnOpenPopupLogin.addEventListener('click', () => popupLogin.open());
 
 formCatAdd.addEventListener('submit', handleFormAddCat);
 formLogin.addEventListener('submit', handleFormLogin);
+
+
+
+
+
 
